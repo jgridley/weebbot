@@ -1,6 +1,6 @@
-exports.run = function(client, message, args) {
+exports.run = function (client, message, args) {
     // Message from "Joshiebottesting" /send, sends to channel "Reeeeeeeee" "Hello from other channel!"
-    client.channels.get("296458314106011650").sendMessage("Hello from other channel! :joy:").catch(console.error);
+    client.channels.get('296458314106011650').sendMessage('Hello from other channel! :joy:').catch(console.error);
 };
 
 exports.conf = {
@@ -11,7 +11,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "send",
+  name: 'send',
   description: 'Send a message from a random channel to the "Reeeeeeeee" channel c:',
-  usage: "send"
+  usage: 'send'
 };

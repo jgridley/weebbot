@@ -1,7 +1,7 @@
-exports.run = function(client, message, args) {
+exports.run = function (client, message, args) {
     // Mass deletes messages
-    let messagecount = parseInt(args.join(" "));
-    message.channel.fetchMessages({limit: messagecount})
+    const messagecount = parseInt(args.join(' '));
+    message.channel.fetchMessages({ limit: messagecount })
         .then(messages => message.channel.bulkDelete(messages));
 };
 
@@ -13,7 +13,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "purge",
-  description: "Purges <x> amount of messages from the channel used in.",
-  usage: "purge <number>"
+  name: 'purge',
+  description: 'Purges <x> amount of messages from the channel used in.',
+  usage: 'purge <number>'
 };

@@ -1,7 +1,7 @@
-exports.run = function(client, message, args) {
+exports.run = function (client, message, args) {
     // Adds numbers together    
-    let numArray = args.map(n=> parseInt(n));
-    let total = numArray.reduce( (p, c) => p+c);
+    const numArray = args.map(n => parseInt(n));
+    const total = numArray.reduce((p, c) => p + c);
 
     message.channel.sendMessage(total).catch(console.error);
 };
@@ -14,7 +14,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "add",
-  description: "Adds numbers together.",
-  usage: "add <number 1> <number 2> ..."
+  name: 'add',
+  description: 'Adds numbers together.',
+  usage: 'add <number 1> <number 2> ...'
 };

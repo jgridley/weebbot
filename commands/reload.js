@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
   }
   if (!command) {
     return message.channel.sendMessage(`I cannot find the command: ${args[0]}`);
-  } else {
+  } 
     message.channel.sendMessage(`Reloading: ${command}`)
       .then(m => {
         client.reload(command)
@@ -18,18 +18,18 @@ exports.run = (client, message, args) => {
             m.edit(`Command reload failed: ${command}\n\`\`\`${e.stack}\`\`\``);
           });
       });
-  }
+  
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ["r"],
+  aliases: ['r'],
   permLevel: 4
 };
 
 exports.help = {
-  name: "reload",
+  name: 'reload',
   description: "Reloads the command file, if it's been updated or modified.",
-  usage: "reload <command>"
+  usage: 'reload <command>'
 };

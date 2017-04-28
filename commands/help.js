@@ -1,4 +1,4 @@
-const config = require("../config.json");
+const config = require('../config.json');
 
 exports.run = (client, message, args) => {
   if (!args[0]) {
@@ -17,12 +17,12 @@ exports.run = (client, message, args) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ["h"],
+    aliases: ['h'],
     permLevel: 0
 };
 
 exports.help = {
-    name: "help",
-    description: "Shows all available commands.",
-    usage: "help <command>"
+    name: 'help',
+    description: 'Shows all available commands.',
+    usage: 'help <command>'
 };
