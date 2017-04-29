@@ -49,11 +49,17 @@ client.reload = function (command) {
 
 client.elevation = function (msg) {
     let permlvl = 0;
-    const mod_role = msg.guild.roles.find('name', config.modroleid);
-    if (mod_role && msg.member.roles.has(mod_role.id)) permlvl = 2;
-    const admin_role = msg.guild.roles.find('name', config.adminroleid);
-    if (admin_role && msg.member.roles.has(admin_role.id)) permlvl = 3;
-    if (msg.author.id === config.ownerid) permlvl = 4;
+    function findMod(element) {
+        return element.id === config.modroleid;
+    }
+    function findAdmin(element) {
+        return element.id === config.adminroleid;
+    }
+    const modrole = msg.guild.roles.find(findMod);
+    const adminrole = msg.guild.roles.find(findAdmin);
+    if (msg.author.id === config.ownerid) { permlvl = 4; } else 
+    if (adminrole && msg.member.roles.has(adminrole.id)) { permlvl = 3; } else 
+    if (modrole && msg.member.roles.has(modrole.id)) { permlvl = 2; }
     return permlvl;
 };
 
