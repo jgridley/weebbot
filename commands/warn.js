@@ -14,8 +14,8 @@ const embed = new Discord.RichEmbed()
   .setTimestamp()
   .addField('Action:', 'Warning')
   .addField('Reason:', args)
-  .addField('User:', `${user}#${user.discriminator}`)
-  .addField('Moderator:', `${message.author}#${message.author.discriminator}`);
+  .addField('User:', `${user.tag}`)
+  .addField('Moderator:', `${message.author.tag}`);
   return client.channels.get(modlog.id).sendEmbed(embed);
 };
 

@@ -18,8 +18,8 @@ const embed = new Discord.RichEmbed()
   .setTimestamp()
   .addField('Action:', 'Mute')
   .addField('Reason:', args)
-  .addField('User:', `${user}#${user.discriminator}`)
-  .addField('Moderator:', `${message.author}#${message.author.discriminator}`);
+  .addField('User:', `${user.tag}`)
+  .addField('Moderator:', `${message.author.tag}`);
 
     message.guild.member(user).addRole(muteRole).catch(console.error).then(() => {
         client.channels.get(modlog.id).sendEmbed(embed).catch(console.error).then(() => {

@@ -15,8 +15,8 @@ const embed = new Discord.RichEmbed()
   .setColor(0x00AE86)
   .setTimestamp()
   .addField('Action:', 'Unmute')
-  .addField('User:', `${user}#${user.discriminator}`)
-  .addField('Moderator:', `${message.author}#${message.author.discriminator}`);
+  .addField('User:', `${user.tag}`)
+  .addField('Moderator:', `${message.author.tag}`);
 
     if (message.guild.member(user).roles.has(muteRole.id));
         message.guild.member(user).removeRole(muteRole).then(() => {

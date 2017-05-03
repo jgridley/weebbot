@@ -13,8 +13,8 @@ const embed = new Discord.RichEmbed()
   .setColor(0x00AE86)
   .setTimestamp()
   .addField('Action:', 'Unban')
-  .addField('User ID:', `${user}`)
-  .addField('Moderator:', `${message.author}#${message.author.discriminator}`);
+  .addField('User:', `${user.tag}`)
+  .addField('Moderator:', `${message.author.tag}`);
   return client.channels.get(modlog.id).sendEmbed(embed);
 };
 
