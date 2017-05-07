@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 exports.run = function (client, message, args) {
     const user = args[0];
-    const modlog = client.channels.find('name', 'mod-log');
+    const modlog = message.guild.channels.find('name', 'mod-log');
     if (!modlog) return message.reply('I cannot find a "mod-log" channel. Please create a "mod-log" channel (Case sensitive).').catch(console.error);
     if (!user) return message.reply('please supply a banned user id to unban such user.').catch(console.error);
 

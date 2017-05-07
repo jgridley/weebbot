@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 exports.run = function (client, message) {
     const user = message.mentions.users.first();
-    const modlog = client.channels.find('name', 'mod-log');
+    const modlog = message.guild.channels.find('name', 'mod-log');
     const muteRole = client.guilds.get(message.guild.id).roles.find('name', 'Muted');
     if (!modlog) return message.reply('I cannot find a "mod-log" channel. Please create a "mod-log" channel (Case sensitive).').catch(console.error);
     if (!muteRole) return message.reply('I cannot find a "Muted" role. Please create a "Muted" role (Case sensitive)').catch(console.error);
