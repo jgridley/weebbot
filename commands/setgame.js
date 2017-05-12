@@ -1,3 +1,5 @@
+const config = require('../config.json');
+
 exports.run = function (client, message, args) {
 // Sets the game playing for the bot.
 //        if (!argresult) argresult = null; // NOTE: DOES NOT CURRENTLY WORK, SHOULD BE A DEFAULT NULL STATEMENT
@@ -15,5 +17,5 @@ exports.conf = {
 exports.help = {
   name: 'setgame',
   description: 'Allows the owner of the bot to set the game of the bot.',
-  usage: 'setgame <message>'
+  usage: `${config.prefix}setgame <message>`
 };

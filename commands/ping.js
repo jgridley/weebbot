@@ -1,3 +1,5 @@
+const config = require('../config.json');
+
 exports.run = (client, message) => {
     message.channel.sendMessage('Ping?')
         .then(msg => {
@@ -15,5 +17,5 @@ exports.conf = {
 exports.help = {
   name: 'ping',
   description: 'Simple ping/pong command.',
-  usage: 'ping'
+  usage: `${config.prefix}ping`
 };

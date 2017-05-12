@@ -1,4 +1,5 @@
 const ms = require('ms');
+const config = require('../config.json');
 
 exports.run = (client, message, args) => {
   if (!client.lockit) client.lockit = [];
@@ -44,5 +45,5 @@ exports.conf = {
 exports.help = {
   name: 'lockdown',
   description: 'This will lock a channel down for a set duration, calculated in milliseconds automatically.',
-  usage: 'lockdown <duration><s,m,h>'
+  usage: `${config.prefix}lockdown <duration><s,m,h>`
 };

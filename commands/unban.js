@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const config = require('../config.json');
 
 exports.run = function (client, message, args) {
     const user = args[0];
@@ -28,5 +29,5 @@ exports.conf = {
 exports.help = {
     name: 'unban',
     description: 'Unbans a user id on a Discord Server.',
-    usage: 'unban @<user> [reason]'
+    usage: `${config.prefix}unban @<user> [reason]`
 };

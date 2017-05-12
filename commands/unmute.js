@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const config = require('../config.json');
 
 exports.run = function (client, message) {
     const user = message.mentions.users.first();
@@ -36,5 +37,5 @@ exports.conf = {
 exports.help = {
     name: 'unmute',
     description: 'Unmutes a mentioned user.',
-    usage: 'unmute @<user>'
+    usage: `${config.prefix}unmute @<user>`
 };

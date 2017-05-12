@@ -1,3 +1,5 @@
+const config = require('../config.json');
+
 exports.run = (client, message, args) => {
   let command;
   if (client.commands.has(args[0])) {
@@ -31,5 +33,5 @@ exports.conf = {
 exports.help = {
   name: 'reload',
   description: "Reloads the command file, if it's been updated or modified.",
-  usage: 'reload <command>'
+  usage: `${config.prefix}reload <command>`
 };

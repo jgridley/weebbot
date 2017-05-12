@@ -1,5 +1,7 @@
+const config = require('../config.json');
+
 exports.run = function (client, message) {
-    if (message.author.id !== '125279886427422720') return;
+    if (message.author.id !== config.ownerid) return;
     try {
         const code = message.content.substring(message.content.indexOf(' '));
         let evaled = eval(code);
@@ -30,5 +32,5 @@ exports.conf = {
 exports.help = {
     name: 'eval',
     description: 'Evaluates JavaScript code and executes it.',
-    usage: 'eval <code>'
+    usage: `${config.prefix}eval <code>`
 };

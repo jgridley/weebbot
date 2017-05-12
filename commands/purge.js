@@ -1,3 +1,5 @@
+const config = require('../config.json');
+
 exports.run = function (client, message, args) {
     // Mass deletes messages
     const messagecount = parseInt(args.join(' '));
@@ -15,5 +17,5 @@ exports.conf = {
 exports.help = {
   name: 'purge',
   description: 'Purges <x> amount of messages from the channel used in.',
-  usage: 'purge <number>'
+  usage: `${config.prefix}purge <number>`
 };

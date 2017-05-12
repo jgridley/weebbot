@@ -1,3 +1,5 @@
+const config = require('../config.json');
+
 exports.run = function (client, message) {
 // Only "Ruin332#3547" can use the /desu command to return "kawaii", else it says no.
 //    let w33bknight = message.guild.roles.find("name", "W33b Knight"); // FOR IF YOU WANT IT TO BE A ROLE THAT DECIDES
@@ -19,5 +21,5 @@ exports.conf = {
 exports.help = {
     name: 'desu',
     description: 'Only Ruin332 can use this command.',
-    usage: 'desu'
+    usage: `${config.prefix}desu`
 };

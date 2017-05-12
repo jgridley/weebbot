@@ -1,3 +1,5 @@
+const config = require('../config.json');
+
 exports.run = function (client, message, args) {
 // /say "message here", bot says the message.
     message.channel.sendMessage(args.join(' ')).catch(console.error);
@@ -13,5 +15,5 @@ exports.conf = {
 exports.help = {
   name: 'say',
   description: 'Allows the bot to type what you say!',
-  usage: 'say <message>'
+  usage: `${config.prefix}say <message>`
 };

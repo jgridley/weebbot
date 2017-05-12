@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const config = require('../config.json');
 
 exports.run = function (client, message, args) {
     const reason = args.slice(1).join(' ');
@@ -35,5 +36,5 @@ exports.conf = {
 exports.help = {
   name: 'kick',
   description: 'Kicks the mentioned user from the Discord server.',
-  usage: 'kick @<user> [reason]'
+  usage: `${config.prefix}kick @<user> [reason]`
 };

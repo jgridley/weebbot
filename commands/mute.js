@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const config = require('../config.json');
 
 exports.run = function (client, message, args) {
     const reason = args.slice(1).join(' ');
@@ -38,5 +39,5 @@ exports.conf = {
 exports.help = {
     name: 'mute',
     description: 'Mutes a mentioned user.',
-    usage: 'mute @<user> [reason]'
+    usage: `${config.prefix}mute @<user> [reason]`
 };

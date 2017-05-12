@@ -1,3 +1,5 @@
+const config = require('../config.json');
+
 exports.run = function (client, message, args) {
     // Adds numbers together    
     const numArray = args.map(n => parseInt(n));
@@ -16,5 +18,5 @@ exports.conf = {
 exports.help = {
   name: 'add',
   description: 'Adds numbers together.',
-  usage: 'add <number 1> <number 2> ...'
+  usage: `${config.prefix}add <number 1> <number 2>`
 };
