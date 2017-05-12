@@ -1,1 +1,1 @@
-npm install
+call npm install

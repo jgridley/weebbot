@@ -1,13 +1,20 @@
 {
-  "name": "Weeb Bot",
+  "name": "weebbot",
   "version": "1.2.5",
   "description": "Joshua Gridley's Discord JavaScript Bot.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jgridley/weebbot.git"
+  },
   "author": "Joshua Andrew Gridley",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jgridley/weebbot/issues"
+  },
   "dependencies": {
     "chalk": "^1.1.3",
     "discord.js": "^11.1.0",
@@ -21,5 +28,6 @@
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-rallycoding": "^3.2.0"
-  }
+  },
+  "homepage": "https://github.com/jgridley/weebbot"
 }
