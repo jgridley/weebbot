@@ -21,9 +21,12 @@
     "jimp": "^0.2.27",
     "leagueapi": "^0.4.21",
     "moment": "^2.18.1",
-    "ms": "^1.0.0",
+    "ms": "^2.0.0",
+    "node-opus": "^0.2.6",
     "nodemon": "^1.11.0",
-    "return-deep-diff": "^0.2.7"
+    "opusscript": "0.0.3",
+    "return-deep-diff": "^0.2.7",
+    "youtube-dl": "^1.11.1"
   },
   "devDependencies": {
     "eslint": "^3.19.0",

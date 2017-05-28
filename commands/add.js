@@ -1,7 +1,6 @@
 const config = require('../config.json');
 
 exports.run = function (client, message, args) {
-    // Adds numbers together    
     const numArray = args.map(n => parseInt(n));
     const total = numArray.reduce((p, c) => p + c);
 
