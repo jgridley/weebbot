@@ -1,9 +1,9 @@
 const config = require('../config.json');
 
 exports.run = (client, message) => {
-    message.channel.sendMessage('Ping?')
+    message.channel.send('Ping?')
         .then(msg => {
-            msg.edit(`**Pong!** :smile: (took: ${msg.createdTimestamp - message.createdTimestamp}ms)`)
+            msg.edit(`**Pong!** :smile: (took: ${msg.createdTimestamp - message.createdTimestamp}ms)`);
         });
 };
 

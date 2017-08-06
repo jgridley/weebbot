@@ -4,7 +4,7 @@ exports.run = function (client, message, args) {
     const numArray = args.map(n => parseInt(n));
     const total = numArray.reduce((p, c) => p + c);
 
-    message.channel.sendMessage(total).catch(console.error);
+    message.channel.send(total).catch(console.error);
 };
 
 exports.conf = {

@@ -11,7 +11,7 @@ exports.run = function (client, message) {
             
         message.channel.sendCode('xl', clean(evaled));
     } catch (err) {
-        message.channel.sendMessage(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+        message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
     }
 };
 

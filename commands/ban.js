@@ -15,14 +15,11 @@ exports.run = function (client, message, args) {
         message.reply(`${member.user.username} has been succesfully banned from the server. Bye bye! :joy:`).catch(console.error);
     
 const embed = new Discord.RichEmbed()
-  .setAuthor('Moderator', message.author.avatarURL)
+  .setAuthor(`${message.author.tag} (${user.id})`, message.author.avatarURL)
   .setColor('#FF0000')
   .setTimestamp()
-  .addField('Action:', 'Ban')
-  .addField('Reason:', args)
-  .addField('User:', `${user.tag}`)
-  .addField('Moderator:', `${message.author.tag}`);
-  return client.channels.get(modlog.id).sendEmbed(embed);
+  .setDescription(`**Action**: Ban\n**User**: ${user.tag} (${user.id})\n**Reason**: ${args}`);
+  return client.channels.get(modlog.id).send({ embed });
     });
 };
 

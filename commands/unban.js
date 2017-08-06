@@ -10,13 +10,11 @@ exports.run = function (client, message, args) {
     message.guild.unban(user);
     
 const embed = new Discord.RichEmbed()
-  .setAuthor('Moderator', message.author.avatarURL)
+  .setAuthor(`${message.author.tag} (${user.id})`, message.author.avatarURL)
   .setColor(0x00AE86)
   .setTimestamp()
-  .addField('Action:', 'Unban')
-  .addField('User:', `${user.tag}`)
-  .addField('Moderator:', `${message.author.tag}`);
-  return client.channels.get(modlog.id).sendEmbed(embed);
+  .setDescription(`**Action**: Unban\n**User**: ${user.tag} (${user.id})\n**Reason**: ${args}`);
+  return client.channels.get(modlog.id).send({ embed });
 };
 
 exports.conf = {

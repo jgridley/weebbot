@@ -12,17 +12,15 @@ exports.run = function (client, message) {
     if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply("I don't have the permissions (MANAGE_ROLES_OR_PERMISSIONS) to do this.").catch(console.error);
     
 const embed = new Discord.RichEmbed()
-  .setAuthor('Moderator', message.author.avatarURL)
+  .setAuthor(`${message.author.tag} (${user.id})`, message.author.avatarURL)
   .setColor(0x00AE86)
   .setTimestamp()
-  .addField('Action:', 'Unmute')
-  .addField('User:', `${user.tag}`)
-  .addField('Moderator:', `${message.author.tag}`);
+  .setDescription(`**Action**: Unmute\n**User**: ${user.tag} (${user.id})\n**Reason**: ${args}`);
 
     if (message.guild.member(user).roles.has(muteRole.id));
         message.guild.member(user).removeRole(muteRole).then(() => {
-            client.channels.get(modlog.id).sendEmbed(embed).catch(console.error).then(() => {
-                message.channel.sendMessage(`${user} has been unmuted serverwide. :smile:`).catch(console.error);
+            client.channels.get(modlog.id).send({ embed }).then(() => {
+                message.channel.send(`${user} has been unmuted serverwide. :smile:`).catch(console.error);
     });
   });
 };

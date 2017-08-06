@@ -14,17 +14,14 @@ exports.run = function (client, message, args) {
     if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply("I don't have the permissions (MANAGE_ROLES_OR_PERMISSIONS) to do this.").catch(console.error);
 
 const embed = new Discord.RichEmbed()
-  .setAuthor('Moderator', message.author.avatarURL)
+  .setAuthor(`${message.author.tag} (${user.id})`, message.author.avatarURL)
   .setColor('#FF0000')
   .setTimestamp()
-  .addField('Action:', 'Mute')
-  .addField('Reason:', args)
-  .addField('User:', `${user.tag}`)
-  .addField('Moderator:', `${message.author.tag}`);
+  .setDescription(`**Action**: Mute\n**User**: ${user.tag} (${user.id})\n**Reason**: ${args}`);
 
     message.guild.member(user).addRole(muteRole).catch(console.error).then(() => {
-        client.channels.get(modlog.id).sendEmbed(embed).catch(console.error).then(() => {
-            message.channel.sendMessage(`${user} has been muted serverwide. :grimacing:`).catch(console.error);
+        client.channels.get(modlog.id).send({ embed }).catch(console.error).then(() => {
+            message.channel.send(`${user} has been muted serverwide. :grimacing:`).catch(console.error);
     });
   });
 };
