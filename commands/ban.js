@@ -15,7 +15,7 @@ exports.run = function (client, message, args) {
         message.reply(`${member.user.username} has been succesfully banned from the server. Bye bye! :joy:`).catch(console.error);
     
 const embed = new Discord.RichEmbed()
-  .setAuthor(`${message.author.tag} (${user.id})`, message.author.avatarURL)
+  .setAuthor(`${message.author.tag} (${message.author.id})`, message.author.avatarURL)
   .setColor('#FF0000')
   .setTimestamp()
   .setDescription(`**Action**: Ban\n**User**: ${user.tag} (${user.id})\n**Reason**: ${args}`);

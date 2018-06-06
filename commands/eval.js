@@ -1,7 +1,7 @@
 const config = require('../config.json');
 
 exports.run = function (client, message) {
-    if (message.author.id !== config.ownerid) return;
+    if (message.author.id !== config.ownerId) return;
     try {
         const code = message.content.substring(message.content.indexOf(' '));
         let evaled = eval(code);
@@ -9,7 +9,7 @@ exports.run = function (client, message) {
         if (typeof evaled !== 'string')
             evaled = require('util'). inspect(evaled);
             
-        message.channel.sendCode('xl', clean(evaled));
+        message.channel.send(clean(evaled), { code: 'xl' });
     } catch (err) {
         message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
     }
@@ -17,7 +17,7 @@ exports.run = function (client, message) {
 
 function clean(text) {
     if (typeof (text) === 'string')
-        return text.replace(/`/g, `\`${String.fromCharCode(8203)}`).replace(/@/g, `@${String.fromCharCode(8203)}`);
+      return text.replace(/`/g, '`' + String.fromCharCode(8203)).replace(/@/g, '@' + String.fromCharCode(8203));
     else
         return text;
 }

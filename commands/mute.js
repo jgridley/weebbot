@@ -14,7 +14,7 @@ exports.run = function (client, message, args) {
     if (!message.guild.member(client.user).hasPermission('MANAGE_ROLES_OR_PERMISSIONS')) return message.reply("I don't have the permissions (MANAGE_ROLES_OR_PERMISSIONS) to do this.").catch(console.error);
 
 const embed = new Discord.RichEmbed()
-  .setAuthor(`${message.author.tag} (${user.id})`, message.author.avatarURL)
+  .setAuthor(`${message.author.tag} (${message.author.id})`, message.author.avatarURL)
   .setColor('#FF0000')
   .setTimestamp()
   .setDescription(`**Action**: Mute\n**User**: ${user.tag} (${user.id})\n**Reason**: ${args}`);

@@ -1,3 +1,6 @@
 node_modules
 config.json
 .eslintrc.json
+imgs/avatar.png
+work-in-progress
+package-lock.json

@@ -10,7 +10,7 @@ exports.run = function (client, message, args) {
     if (message.mentions.users.size === 0) return message.reply('please mention a user to warn.').catch(console.error);
     
 const embed = new Discord.RichEmbed()
-  .setAuthor(`${message.author.tag} (${user.id})`, message.author.avatarURL)
+  .setAuthor(`${message.author.tag} (${message.author.id})`, message.author.avatarURL)
   .setColor('#0000FF')
   .setTimestamp()
   .setDescription(`**Action**: Warning\n**User**: ${user.tag} (${user.id})\n**Reason**: ${args}`);

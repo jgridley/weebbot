@@ -9,7 +9,7 @@ const moment = require('moment');
 require('./util/eventLoader')(client);
 
 const log = msg => {
-    console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${msg}`);
+    console.log(`[${moment().format('MM-DD-YYYY HH:mm:ss')}] ${msg}`);
 };
 
 client.commands = new Discord.Collection();
@@ -49,11 +49,11 @@ client.reload = function (command) {
 
 client.elevation = function (msg) {
     let permlvl = 0;
-    if (msg.author.id === config.ownerid) { 
+    if (msg.author.id === config.ownerId) { 
         permlvl = 4;
-    } else if (msg.member.roles.has(config.adminroleid)) { 
+    } else if (msg.member.roles.has(config.teacherRoleId)) { 
         permlvl = 3;
-    } else if (msg.member.roles.has(config.modroleid)) { 
+    } else if (msg.member.roles.has(config.officerRoleId)) { 
         permlvl = 2; 
     } 
     return permlvl;
@@ -61,7 +61,7 @@ client.elevation = function (msg) {
 
 // Sets the "Playing ..." game status for the bot by default.
 client.on('ready', () => {
-    client.user.setGame('made by Joshua Gridley').catch(console.error);
+    client.user.setActivity('made by Joshua Gridley').catch(console.error);
 });
 
 // Catch discord.js errors and remove client token,

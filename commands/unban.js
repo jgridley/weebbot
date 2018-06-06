@@ -10,7 +10,7 @@ exports.run = function (client, message, args) {
     message.guild.unban(user);
     
 const embed = new Discord.RichEmbed()
-  .setAuthor(`${message.author.tag} (${user.id})`, message.author.avatarURL)
+  .setAuthor(`${message.author.tag} (${message.author.id})`, message.author.avatarURL)
   .setColor(0x00AE86)
   .setTimestamp()
   .setDescription(`**Action**: Unban\n**User**: ${user.tag} (${user.id})\n**Reason**: ${args}`);
